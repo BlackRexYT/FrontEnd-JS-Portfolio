@@ -132,7 +132,7 @@ label{
     color:white;
 }
 .dark-theme section{
-    background-color: #242424;
+    background: linear-gradient(90deg, rgba(22,22,22,1) 0%, rgba(40,40,40,1) 48%, rgba(66,66,66,1) 100%);
 }
 .dark-theme #personal-logo{
     filter: none;
@@ -283,6 +283,7 @@ nav{
     text-align:center;
     font-size:48px;
     margin-bottom:60px;
+    z-index:1;
 }
 .project__img{
     width:100%;
@@ -558,38 +559,47 @@ footer{
  .shape--0{
     top:15vh;
     left:5vw;
+    z-index:0;
  }
  .shape--1{
     top:15vh;
     left:50vw;
+    z-index:0;
  }
  .shape--2{
     top:15vh;
     left:80vw;
+    z-index:0;
  }
  .shape--3{
     top:50vh;
     left:5vw;
+    z-index:0;
  }
  .shape--4{
     top:50vh;
     left:50vw;
+    z-index:0;
  }
  .shape--5{
     top:50vh;
     left:80vw;
+    z-index:0;
  }
  .shape--6{
     top:80vh;
     left:5vw;
+    z-index:0;
  }
  .shape--7{
     top:80vh;
     left:50vw;
+    z-index:0;
  }
  .shape--8{
     top:80vh;
     left:80vw;
+    z-index:0;
  }
 
 
@@ -636,6 +646,9 @@ Responsive
         margin-left:0;
     }
     .nav__link:first-child{
+        display: none;
+    }
+    .nav__link:nth-child(3){
         display: none;
     }
     .project__description--para{
