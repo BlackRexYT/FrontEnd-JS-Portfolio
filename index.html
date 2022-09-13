@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahad Al Adsani</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("iFtzq5jYPrcreQHkM");
+        })();
+    </script>
+</head>
+<body class="dark-theme">
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id='personal-logo'src="assets/logov2white.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="header__title">Hey</h1>
+                <h1 class="header__title text--color">I'm Fahad.</h1>
+                <p class="header__para">I'm a <b class="text--color">Frontend Software Engineer</b> based in <b class="text--color">Kuwait</b>, but more than willing to engage in a remote work environment.
+                    <br>
+                    Here's a bit more <b class="text--color click"  onclick="toggleModal()">about me</b>.
+                </p>
+                <div class="social__list">
+                    <a href="https://github.com/BlackRexYT" target="_blank" class="social__link click"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" class="social__link click" ><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/BlackRexArt" target="_blank" class="social__link click"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+                <p class="modal__para">
+                    I'm currently a university student studying at the <b class="text--color">Gulf University of Science and Technology</b>, to work in CyberSecurity, however I've made this venture into <b class="text--color">Frontend Software Engineering</b> so as to make money while still studying.
+                    <br>
+                    <b class="text--color">Down here are all the languages and tech stacks I'm knowledgeable in.</b>
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://media.badgr.com/uploads/badges/issuer_badgeclass_8ec10048-9593-4b5e-a4d5-dfa9dd0624db.png" alt="">
+                        <span class="language__name">Javascript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-512.png" alt="">
+                        <span class="language__name">Python</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="assets/java.png" alt="">
+                        <span class="language__name">Java</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">Let's have a chat.</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
+                <form action="" id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input type="text" name="user_name" class="input" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">E-Mail</label>
+                        <input type="email" name="user_email" class="input" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea type="text" name="user_message" class="input" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+            <i class="fas fa-times modal__exit click"  onclick="toggleModal()"></i>
+        </div>
+        <p class="shape shape--0">🥶</p>
+        <p class="shape shape--1">💀</p>
+        <p class="shape shape--2">🥶</p>
+        <p class="shape shape--3">👌</p>
+        <p class="shape shape--4">💀</p>
+        <p class="shape shape--5">👻</p>
+        <p class="shape shape--6">👌</p>
+        <p class="shape shape--7">👻</p>
+        <p class="shape shape--8">👌</p>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="text--color">Projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="assets/projects/w2finaltract.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Treact Clone
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JS
+                                </h4>
+                                <p class="project__description--para">
+                                    A fully responsive and accurate recreation of the Treact template
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/FrontEnd-W2-FP" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/FrontEnd-W2-FP/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__wrapper">
+                            <img src="assets/projects/BasicPortfolio.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Basic Portfolio
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    A basic preset HTML and CSS project meant to serve as a portfolio.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/FrontEnd-E-P" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/FrontEnd-E-P/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__wrapper">
+                            <img src="assets/projects/BasicEcommerce.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Ecommerce Site
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JS
+                                </h4>
+                                <p class="project__description--para">
+                                    A website preset meant to serve as an ecommerce store.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/FrontEnd-JS-E-C" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/FrontEnd-JS-E-C/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__wrapper project__loadb">
+                            <img src="assets/projects/LoADB.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Line of Action: DB Edition
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    A website resembling Line-Of-Action.com that has tools that would teach people how to draw in the Dragon Ball artstyle.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/Line-of-Action-DB" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/Line-of-Action-DB/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__wrapper">
+                            <img src="assets/projects/LazurdClone.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Lazurd Clone
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    A lazurd website clone I did in University for a quiz.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/Lazurd-Clone" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/Lazurd-Clone/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project__wrapper">
+                            <img src="assets/projects/ScholasticClone.png" alt="" class="project__img">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Scholastic Clone
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    A Scholastic clone University final project.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/BlackRexYT/Scholastic-Clone" class="project__description--link"><i class="fab fa-github"></i></a>
+                                    <a href="https://blackrexyt.github.io/Scholastic-Clone/" class="project__description--link"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img src="assets/logov2white.png" alt="" class="footer_logo--img">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" class="
+                    footer__social--link 
+                    link__hover-effect 
+                    link__hover-effect--white
+                    ">
+                        Github
+                    </a>
+                    <a href="#" class="
+                    footer__social--link 
+                    link__hover-effect 
+                    link__hover-effect--white
+                    ">
+                        LinkedIn
+                    </a>
+                    <a href="#" class="
+                    footer__social--link 
+                    link__hover-effect 
+                    link__hover-effect--white
+                    ">
+                        Email
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="
+                    footer__social--link 
+                    link__hover-effect 
+                    link__hover-effect--white
+                    " >
+                        Contact
+                    </a>
+                    <a href="#" class="
+                    footer__social--link 
+                    link__hover-effect 
+                    link__hover-effect--white
+                    ">
+                        Twitter
+                    </a>
+                </div>
+                <div class="footer__copyright"> Copyright &copy; 2022 Fahad Al Adsani</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
